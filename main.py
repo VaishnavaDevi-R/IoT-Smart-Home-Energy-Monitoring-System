@@ -1,7 +1,9 @@
 from python_simulation.simulator import generate_sensor_data
 from python_simulation.energy_calculator import calculate_energy_metrics
 from python_simulation.cost_estimator import estimate_cost
+from python_simulation.alert_engine import generate_alert
 from python_simulation.report_generator import log_to_csv
+from python_simulation.thingspeak_uploader import upload_to_thingspeak
 
 
 def main():
@@ -16,13 +18,28 @@ def main():
         metrics["energy"]
     )
 
+    alert = generate_alert(
+        metrics["power"]
+    )
+
     log_to_csv(
         sensor_data,
         metrics,
         cost
     )
 
-    print("\n===== SMART HOME ENERGY MONITOR =====")
+    upload_to_thingspeak(
+        sensor_data["voltage"],
+        sensor_data["current"],
+        metrics["power"],
+        metrics["energy"],
+        cost,
+        alert
+    )
+
+    print("\n==============================")
+    print(" SMART HOME ENERGY MONITOR ")
+    print("==============================")
 
     print("\nActive Appliances:")
 
@@ -34,8 +51,9 @@ def main():
     print(f"Power   : {metrics['power']} W")
     print(f"Energy  : {metrics['energy']} kWh")
     print(f"Cost    : ₹{cost}")
+    print(f"Alert   : {alert}")
 
-    print("\n====================================")
+    print("\n==============================\n")
 
 
 if __name__ == "__main__":

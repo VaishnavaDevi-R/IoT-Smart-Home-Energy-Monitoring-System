@@ -1,9 +1,9 @@
 def calculate_energy_metrics(power):
 
-    hours = 1
+    HOURS = 1
 
     energy = round(
-        power / 1000 * hours,
+        (power / 1000) * HOURS,
         3
     )
 

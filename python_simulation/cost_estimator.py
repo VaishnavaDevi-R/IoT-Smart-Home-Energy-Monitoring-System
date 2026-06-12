@@ -1,7 +1,9 @@
+TARIFF_PER_KWH = 8
+
+
 def estimate_cost(energy):
 
-    tariff = 8
-
-    cost = round(energy * tariff, 2)
-
-    return cost
+    return round(
+        energy * TARIFF_PER_KWH,
+        2
+    )

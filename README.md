@@ -47,6 +47,12 @@ This project solves these challenges by providing continuous monitoring, analyti
 
 ---
 
+## 🚀 Live Demo
+
+🔗 https://iot-smart-home-energy-monitoring-system-aetjsyzesktncahzueh9fy.streamlit.app/
+
+---
+
 # ✨ Features
 
 ### Energy Monitoring

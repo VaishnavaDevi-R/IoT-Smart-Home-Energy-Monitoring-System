@@ -1,12 +1,17 @@
-import random
+from python_simulation.appliance_simulator import calculate_total_power
+
+VOLTAGE = 230
+
 
 def generate_sensor_data():
 
-    voltage = round(random.uniform(220, 240), 2)
+    active_devices, power = calculate_total_power()
 
-    current = round(random.uniform(0.5, 10.0), 2)
+    current = round(power / VOLTAGE, 2)
 
     return {
-        "voltage": voltage,
-        "current": current
+        "voltage": VOLTAGE,
+        "current": current,
+        "power": power,
+        "active_devices": active_devices
     }

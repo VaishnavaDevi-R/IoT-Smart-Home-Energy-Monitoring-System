@@ -4,7 +4,7 @@ from python_simulation.cost_estimator import estimate_cost
 from python_simulation.alert_engine import generate_alert
 from python_simulation.report_generator import log_to_csv
 from python_simulation.thingspeak_uploader import upload_to_thingspeak
-
+from python_simulation.pdf_report_generator import generate_pdf_report
 
 def main():
 
@@ -29,6 +29,15 @@ def main():
     )
 
     upload_to_thingspeak(
+        sensor_data["voltage"],
+        sensor_data["current"],
+        metrics["power"],
+        metrics["energy"],
+        cost,
+        alert
+    )
+
+    generate_pdf_report(
         sensor_data["voltage"],
         sensor_data["current"],
         metrics["power"],

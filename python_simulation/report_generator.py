@@ -4,6 +4,7 @@ from datetime import datetime
 
 CSV_FILE = "data/energy_logs.csv"
 
+
 def log_to_csv(sensor_data, metrics, cost):
 
     file_exists = os.path.isfile(CSV_FILE)
@@ -19,7 +20,8 @@ def log_to_csv(sensor_data, metrics, cost):
                 "Current",
                 "Power",
                 "Energy",
-                "Cost"
+                "Cost",
+                "ActiveDevices"
             ])
 
         writer.writerow([
@@ -28,5 +30,6 @@ def log_to_csv(sensor_data, metrics, cost):
             sensor_data["current"],
             metrics["power"],
             metrics["energy"],
-            cost
+            cost,
+            ",".join(sensor_data["active_devices"])
         ])

@@ -1,2 +1,3 @@
-Timestamp,Voltage,Current,Power,Energy,Cost
-2026-06-12 20:43:19.912632,230,8.2,1885,1.885,15.08
+Timestamp,Voltage,Current,Power,Energy,Cost,ActiveDevices
+2026-06-12 20:55:37.847890,230,8.2,1885,1.885,15.08,"LED Bulb,TV,Fan,Air Conditioner,Refrigerator"
+2026-06-12 20:58:31.095862,230,8.2,1885,1.885,15.08,"LED Bulb,TV,Fan,Air Conditioner,Refrigerator"

@@ -5,6 +5,9 @@ from python_simulation.alert_engine import generate_alert
 from python_simulation.report_generator import log_to_csv
 from python_simulation.thingspeak_uploader import upload_to_thingspeak
 from python_simulation.pdf_report_generator import generate_pdf_report
+from python_simulation.graph_generator import generate_graphs
+from python_simulation.usage_summary import generate_usage_summaries
+
 
 def main():
 
@@ -37,6 +40,10 @@ def main():
         alert
     )
 
+    generate_graphs()
+    
+    generate_usage_summaries()
+
     generate_pdf_report(
         sensor_data["voltage"],
         sensor_data["current"],
@@ -45,6 +52,7 @@ def main():
         cost,
         alert
     )
+
 
     print("\n==============================")
     print(" SMART HOME ENERGY MONITOR ")

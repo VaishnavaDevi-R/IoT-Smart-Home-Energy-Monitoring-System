@@ -1,0 +1,8 @@
+pandas
+numpy
+paho-mqtt
+matplotlib
+streamlit
+reportlab
+plotly
+requests

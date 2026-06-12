@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual Environment
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# CSV Outputs
+data/*.csv
+
+# Reports
+outputs/*.pdf
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Secrets
+.env
+secrets.h
